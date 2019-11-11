@@ -17,3 +17,49 @@
     <div class="right-button"> > </div>
   </div>
 */
+function carouselCreator(item) {
+  // create elements
+  const carousel = document.createElement('div');
+  const leftButton = document.createElement('button');
+  const mountains = document.createElement('img');
+  const computer = document.createElement('img');
+  const trees = document.createElement('img');
+  const turntable = document.createElement('img');
+  const rightButton = document.createElement('button');
+
+  // html tree
+  carousel.appendChild(leftButton);
+  carousel.appendChild(mountains);
+  carousel.appendChild(computer);
+  carousel.appendChild(trees);
+  carousel.appendChild(turntable);
+  carousel.appendChild(rightButton);
+
+  // classlist
+  carousel.classList.add('carousel');
+  leftButton.classList.add('left-Button');
+  rightButton.classList.add('right-button');
+
+  // content
+  leftButton.textContent = "<";
+  rightButton.textContent = ">";
+  mountains.setAttribute('src', './assests/carousel/mountains.jpeg');
+  computer.setAttribute('src', './assests/carousel/computer.jpeg');
+  trees.setAttribute('src', './assets/carousel/trees.jpeg');
+  turntable.setAttribute('src', './assets/carousel/turntable.jpeg')
+
+  // click-events
+  leftButton.addEventListener('click', () => 
+    toggleLeft());
+
+  rightButton.addEventListener('click', () => 
+    toggleRight());
+
+
+  return carousel;
+
+}
+const parentCarousel = document.querySelector('.carousel-container');
+parentCarousel.appendChild(carouselCreator);
+
+
